@@ -20,12 +20,12 @@
  * SOURCE: https://lucide.dev/icons/mouse-pointer-click
  */
 
-export default function MousePointerClick() {
+export default function MousePointerClick({ width, height }: { width?: number, height?: number }) {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
-      width='24'
-      height='24'
+      width={width ?? 24}
+      height={height ?? 24}
       viewBox='0 0 24 24'
       fill='none'
       stroke='currentColor'
