@@ -14,7 +14,7 @@ export function FlagNode({ list, value, callback }: FlagNodeProps) {
         {list.map((flagData, index) => (
           <button
             key={index}
-            className='px-2 py-1.5 not-disabled:hover:bg-outline/35 disabled:text-violet-400 border border-outline rounded-lg transition-colors duration-300 not-disabled:cursor-pointer select-none'
+            className='px-2 py-1.5 not-disabled:hover:bg-outline/35 disabled:text-primary border border-outline rounded-lg transition-colors duration-300 not-disabled:cursor-pointer select-none'
             disabled={value === flagData.name}
             onClick={() => callback(flagData)}
           >

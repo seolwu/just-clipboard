@@ -14,7 +14,8 @@ export function PrintNode({ result, disabled, callback }: PrintNodeProps) {
 
   const handleClick = useCallback((event: React.MouseEvent<HTMLButtonElement | HTMLDivElement, MouseEvent>) => {
     callback(event)
-  }, [callback])
+    setAlertVisible(true)
+  }, [callback, setAlertVisible])
 
   useEffect(() => {
     if (alertVisible) {
@@ -22,7 +23,7 @@ export function PrintNode({ result, disabled, callback }: PrintNodeProps) {
         setAlertVisible(false)
       }, alertDuration)
     }
-  }, [alertDuration, alert, setAlertVisible])
+  }, [alertDuration, alertVisible, setAlertVisible])
   
   return (
     <Node name='Print'
@@ -58,7 +59,7 @@ export function PrintNode({ result, disabled, callback }: PrintNodeProps) {
           </button>
         </div>
         {alertVisible && (
-          <span className='flex justify-center text-violet-400 text-xs'>
+          <span className='flex justify-center text-primary text-xs'>
             Successfully copied to clipboard!
           </span>
         )}
