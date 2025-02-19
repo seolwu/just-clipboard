@@ -50,7 +50,7 @@ export function PrintNode({ result, disabled, callback }: PrintNodeProps) {
             </span>
           </button>
           <button
-            className='flex items-center justify-center p-1 mt-0 mb-auto not-disabled:cursor-pointer'
+            className='flex items-center justify-center p-1 mt-0.5 mb-auto not-disabled:cursor-pointer'
             disabled={disabled}
             onClick={handleClick}
           >
