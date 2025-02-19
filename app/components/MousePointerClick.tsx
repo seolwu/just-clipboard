@@ -29,9 +29,9 @@ export default function MousePointerClick({ width, height }: { width?: number, h
       viewBox='0 0 24 24'
       fill='none'
       stroke='currentColor'
-      stroke-width='2'
-      stroke-linecap='round'
-      stroke-linejoin='round'
+      strokeWidth='2'
+      strokeLinecap='round'
+      strokeLinejoin='round'
       className='lucide lucide-mouse-pointer-click'
     >
       <path d='M14 4.1 12 6' />
