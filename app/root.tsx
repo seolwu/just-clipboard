@@ -10,7 +10,6 @@ import {
 } from '@remix-run/react'
 import type { LinksFunction, LoaderFunction } from '@remix-run/node'
 import { PreventFlashOnWrongTheme, ThemeProvider, useTheme } from 'remix-themes'
-
 import { themeSessionResolver } from './utils/session'
 import { type ThemeLoader } from 'types/theme'
 
@@ -48,7 +47,7 @@ export default function AppWithProviders() {
   )
 }
 
-export function App({ children }: { children: React.ReactElement }) {
+export function App({ children }: { children?: React.ReactElement }) {
   const data = useLoaderData<typeof loader>()
   const [theme] = useTheme()
 
@@ -64,7 +63,7 @@ export function App({ children }: { children: React.ReactElement }) {
         <Links />
         <PreventFlashOnWrongTheme ssrTheme={Boolean(data.theme)} />
       </head>
-      <body className=' font-["Open_Sans",serif]'>
+      <body>
         {children}
         <ScrollRestoration />
         <Scripts />

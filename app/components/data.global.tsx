@@ -1,14 +1,13 @@
 import { useLocation, useNavigate } from '@remix-run/react'
 import { useEffect } from 'react'
-import { type Flags } from 'types/flag'
+import { type FlagData } from 'types/flag'
 import { copyTo } from '~/utils/clipboard'
 import Error from './error.global'
 
 export const regex = /^\/([\w]+)\/(.+)$/
 
-export default function Page({ flag, postProcessing }: { flag: Flags, postProcessing?: (flag: string, data: string) => string }) {
+export default function Page({ flag, postProcessing }: { flag: FlagData, postProcessing?: (flag: string, data: string) => string }) {
   const navigate = useNavigate()
-
   const location = useLocation()
   
   useEffect(() => {
@@ -17,7 +16,7 @@ export default function Page({ flag, postProcessing }: { flag: Flags, postProces
   }, [copyTo])
 
   useEffect(() => {
-    navigate(`/${flag.slice(0, 1)}`)
+    navigate(`/${flag.alias}`)
   }, [navigate])
 
   return (<></>)

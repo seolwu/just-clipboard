@@ -22,9 +22,8 @@
 }
 
 .dark {
-  --primary: 0 0 100%;
-  --secondary: var(--outline);
-  --background: 0 0% 4%;
+  --primary: 256 100% 77%;
+  --background: 213 4% 11%;
   --on-background: 0 0% 93%;
   --outline: 0 0% 24%;
   --error: 0 75% 62%;
@@ -32,9 +31,8 @@
 }
 
 .light {
-  --primary: 0 0 0%;
-  --secondary: var(--outline);
-  --background: 0 0% 100%;
+  --primary: 256 100% 77%;
+  --background: 212 24% 96%;
   --on-background: 0 0% 9%;
   --outline: 0 0% 76%;
   --error: 0 75% 62%;
