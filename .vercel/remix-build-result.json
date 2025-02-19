@@ -1,0 +1,178 @@
+{
+  "buildManifest": {
+    "serverBundles": {
+      "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0": {
+        "id": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
+        "file": "build/server/nodejs-eyJydW50aW1lIjoibm9kZWpzIn0/index.js",
+        "config": {
+          "runtime": "nodejs"
+        }
+      }
+    },
+    "routeIdToServerBundleId": {
+      "page/route": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
+      "default/route": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
+      "default/data": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
+      "escape/route": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
+      "escape/data": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
+      "page/error": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0"
+    },
+    "routes": {
+      "root": {
+        "path": "",
+        "id": "root",
+        "file": "app/root.tsx",
+        "config": {}
+      },
+      "page/route": {
+        "path": "/",
+        "index": true,
+        "id": "page/route",
+        "parentId": "root",
+        "file": "app/page/route.tsx",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "default/layout": {
+        "path": "d",
+        "id": "default/layout",
+        "parentId": "root",
+        "file": "app/default/layout.tsx",
+        "config": {}
+      },
+      "default/route": {
+        "index": true,
+        "id": "default/route",
+        "parentId": "default/layout",
+        "file": "app/default/route.tsx",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "default/data": {
+        "path": "*",
+        "id": "default/data",
+        "parentId": "default/layout",
+        "file": "app/default/data.tsx",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "escape/layout": {
+        "path": "e",
+        "id": "escape/layout",
+        "parentId": "root",
+        "file": "app/escape/layout.tsx",
+        "config": {}
+      },
+      "escape/route": {
+        "index": true,
+        "id": "escape/route",
+        "parentId": "escape/layout",
+        "file": "app/escape/route.tsx",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "escape/data": {
+        "path": "*",
+        "id": "escape/data",
+        "parentId": "escape/layout",
+        "file": "app/escape/data.tsx",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "page/error": {
+        "path": "*",
+        "id": "page/error",
+        "parentId": "root",
+        "file": "app/page/error.tsx",
+        "config": {
+          "runtime": "nodejs"
+        }
+      }
+    }
+  },
+  "remixConfig": {
+    "appDirectory": "E:\\projects\\just-clipboard\\app",
+    "basename": "/",
+    "buildDirectory": "E:\\projects\\just-clipboard\\build",
+    "future": {
+      "v3_fetcherPersist": true,
+      "v3_relativeSplatPath": true,
+      "v3_throwAbortReason": true,
+      "v3_routeConfig": false,
+      "v3_singleFetch": true,
+      "v3_lazyRouteDiscovery": true,
+      "unstable_optimizeDeps": false
+    },
+    "manifest": false,
+    "publicPath": "/",
+    "routes": {
+      "root": {
+        "path": "",
+        "id": "root",
+        "file": "root.tsx"
+      },
+      "page/route": {
+        "path": "/",
+        "index": true,
+        "id": "page/route",
+        "parentId": "root",
+        "file": "page/route.tsx"
+      },
+      "default/layout": {
+        "path": "d",
+        "id": "default/layout",
+        "parentId": "root",
+        "file": "default/layout.tsx"
+      },
+      "default/route": {
+        "index": true,
+        "id": "default/route",
+        "parentId": "default/layout",
+        "file": "default/route.tsx"
+      },
+      "default/data": {
+        "path": "*",
+        "id": "default/data",
+        "parentId": "default/layout",
+        "file": "default/data.tsx"
+      },
+      "escape/layout": {
+        "path": "e",
+        "id": "escape/layout",
+        "parentId": "root",
+        "file": "escape/layout.tsx"
+      },
+      "escape/route": {
+        "index": true,
+        "id": "escape/route",
+        "parentId": "escape/layout",
+        "file": "escape/route.tsx"
+      },
+      "escape/data": {
+        "path": "*",
+        "id": "escape/data",
+        "parentId": "escape/layout",
+        "file": "escape/data.tsx"
+      },
+      "page/error": {
+        "path": "*",
+        "id": "page/error",
+        "parentId": "root",
+        "file": "page/error.tsx"
+      }
+    },
+    "serverBuildFile": "index.js",
+    "serverModuleFormat": "esm",
+    "ssr": true
+  },
+  "viteConfig": {
+    "build": {
+      "assetsDir": "assets"
+    }
+  }
+}
