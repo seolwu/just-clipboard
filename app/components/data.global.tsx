@@ -1,8 +1,8 @@
 import { useLocation, useNavigate } from '@remix-run/react'
 import { useEffect } from 'react'
+import { type Flags } from 'types/flag'
 import { copyTo } from '~/utils/clipboard'
 import Error from './error.global'
-import { Flags } from 'types/flag'
 
 export const regex = /^\/([\w]+)\/(.+)$/
 

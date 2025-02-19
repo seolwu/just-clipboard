@@ -3,7 +3,7 @@ import { type Flags } from 'types/flag'
 import { alias, defaultFlags, flagExpressions as fex } from '~/utils/flag'
 import { toClipboard } from '~/utils/clipboard'
 import { getTip } from '~/utils/tip'
-import { MousePointerClick } from 'lucide-react'
+import MousePointerClick from './MousePointerClick'
 
 export default function Index() {
   const [location, setLocation] = useState<Location>()
