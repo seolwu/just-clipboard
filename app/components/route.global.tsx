@@ -1,15 +1,11 @@
 import { useCallback, useEffect, useState } from 'react'
 import { type FlagData, type Flags } from 'types/flag'
-import { defaultFlags, getDefaultFlag, getFlagByAlias } from '~/utils/flag'
+import { availableFlags, getDefaultFlag, getFlagByName } from '~/utils/flag'
 import { toClipboard } from '~/utils/clipboard'
 import { getTip } from '~/utils/tip'
 import { DataNode, FlagNode, PrintNode } from './node'
 
-interface RouteProps {
-  transform?: (data: string) => string
-}
-
-export default function Index({ transform }: RouteProps) {
+export default function Index() {
   const [location, setLocation] = useState<Location>()
   const [tip, setTip] = useState<string>(getTip())
   const [flag, setFlag] = useState<FlagData | null>()
@@ -44,39 +40,35 @@ export default function Index({ transform }: RouteProps) {
   }, [setLocation])
 
   useEffect(() => {
-    setFlags(defaultFlags)
+    setFlags(availableFlags)
 
     if (location) {
       const match = location.pathname.match(/^\/([\w]+)/)
       if (match) {
-        const alias = match[1]
-        const tempFlag = getFlagByAlias(alias)
-        setFlag(tempFlag)
+        const char = match[1]
+        const hotFlag = getFlagByName(char)
+        setFlag(hotFlag)
       } else {
-        const tempFlag = getDefaultFlag()
-        setFlag(tempFlag)
+        const hotFlag = getDefaultFlag()
+        setFlag(hotFlag)
       }
     }
-  }, [location, setLocation, setFlag, setFlags])
-
-  useEffect(() => {
-    if (flag) {
-      const alias = flag.alias
-      if (window && window.history) {
-        window.history.replaceState({ flag: alias }, '', `/${alias}`)
-      }
-    }
-  }, [flag])
+  }, [location, setLocation, availableFlags, setFlag, setFlags])
 
   useEffect(() => {
     if (location && flag) {
-      const alias = flag.alias
-      if (transform) {
-        const transformed = transform(data)
-        const result = `${location.origin}/${alias}${transformed && `/${transformed}`}`
+      const shortName = flag.shortName
+
+      if (window && window.history) {
+        window.history.replaceState({ flag: shortName }, '', `/${shortName}`)
+      }
+
+      if (flag.transform) {
+        const transformed = flag.transform(data)
+        const result = `${location.origin}/${shortName}${transformed && `/${transformed}`}`
         setPrintResult(result)
       } else {
-        const result = `${location.origin}/${alias}${data && `/${data}`}`
+        const result = `${location.origin}/${shortName}${data && `/${data}`}`
         setPrintResult(result)
       }
     }
