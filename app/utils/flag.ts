@@ -19,13 +19,13 @@ export const availableFlags: Flags = {
     expressions: 'a\\n',
     transform(value) {
       return value
-        .replaceAll('\r', '&#13;')
-        .replaceAll('\n', '&#10;')
+        .replaceAll(/\r/g, '\\r')
+        .replaceAll(/\n/g, '\\n')
     },
     postProcessing(_, data) {
       const encodeData = data
-        .replaceAll(/&#13;/g, '%20%0A')
-        .replaceAll(/&#10;/g, '%20%0D')
+        .replaceAll(/\\r|\/r|&#13;/g, '%0A') // Carriage Return (\r)
+        .replaceAll(/\\n|\/n|&#10;/g, '%0D') // Line Feed (\n)
       const decode = decodeURIComponent(encodeData)
   
       return decode
