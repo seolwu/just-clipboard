@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from 'react'
+import copy from 'clipboard-copy'
 import { type FlagData, type Flags } from 'types/flag'
 import { availableFlags, getDefaultFlag, getFlagByName } from '~/utils/flag'
-import { toClipboard } from '~/utils/clipboard'
 import { getTip } from '~/utils/tip'
 import { DataNode, FlagNode, PrintNode } from './node'
 
@@ -29,9 +29,9 @@ export default function Index() {
   const handlePrint = useCallback((event: React.MouseEvent<HTMLButtonElement | HTMLDivElement, MouseEvent>) => {
     const text = event.currentTarget.textContent!
     if (data.length) {
-      toClipboard(text)
+      copy(text)
     }
-  }, [data, toClipboard])
+  }, [data, copy])
 
   useEffect(() => {
     if (window && window.location) {
