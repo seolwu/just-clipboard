@@ -12,6 +12,7 @@ import type { LinksFunction, LoaderFunction } from '@remix-run/node'
 import { PreventFlashOnWrongTheme, ThemeProvider, useTheme } from 'remix-themes'
 import { themeSessionResolver } from './utils/session'
 import { type ThemeLoader } from 'types/theme'
+import { PropsWithChildren } from 'react'
 
 export const links: LinksFunction = () => [
   { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
@@ -47,7 +48,7 @@ export default function AppWithProviders() {
   )
 }
 
-export function App({ children }: { children?: React.ReactElement }) {
+export function App({ children }: PropsWithChildren) {
   const data = useLoaderData<typeof loader>()
   const [theme] = useTheme()
 

@@ -11,12 +11,16 @@ export default function Page({ flag, postProcessing }: { flag: FlagData, postPro
   const location = useLocation()
   
   useEffect(() => {
-    const path = location.pathname
-    copyTo(path, regex, postProcessing && postProcessing)
+    const pathname = location.pathname
+    const search = location.search
+    const hash = location.hash
+    const data = pathname + search + hash
+
+    copyTo(data, regex, postProcessing && postProcessing)
   }, [copyTo])
 
   useEffect(() => {
-    navigate(`/${flag.alias}`)
+    navigate(`/${flag.shortName}`)
   }, [navigate])
 
   return (<></>)

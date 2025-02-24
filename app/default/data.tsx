@@ -1,6 +1,11 @@
 import Data from '~/components/data.global'
-import { defaultFlags } from '~/utils/flag'
+import { availableFlags } from '~/utils/flag'
 
 export default function DataPage() {
-  return <Data flag={defaultFlags.default!} />
+  const flag = availableFlags.default!
+
+  return <Data
+    flag={flag}
+    postProcessing={flag.postProcessing}
+  />
 }

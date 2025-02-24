@@ -1,16 +1,11 @@
 import Data from '~/components/data.global'
-import { useCallback } from 'react'
-import { defaultFlags } from '~/utils/flag'
+import { availableFlags } from '~/utils/flag'
 
 export default function DataPage() {
-  const encode = useCallback((_: string, data: string) => {
-    const encodeData = data
-      .replaceAll(/\/n/g, '%20%0A')
-      .replaceAll(/\/r/g, '%20%0D')
-    const decode = decodeURIComponent(encodeData)
+  const flag = availableFlags.escape!
 
-    return decode
-  }, [])
-
-  return <Data flag={defaultFlags.escape!} postProcessing={encode} />
+  return <Data
+    flag={flag}
+    postProcessing={flag.postProcessing}
+  />
 }
