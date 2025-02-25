@@ -21,15 +21,28 @@ export default defineConfig({
       },
       routes(defineRoutes) {
         return defineRoutes(route => {
+          type RoutePath = { [key: string]: string }
+          
+          const getRoutePath = (flag: string): RoutePath => {
+            const routePath = `routes/${flag}`
+            return {
+              layout: `${routePath}/layout.tsx`,
+              route: `${routePath}/route.tsx`,
+              data: `${routePath}/data.tsx`,
+            }
+          }
+
+          const addRoute = (flagChar: string, routePath: RoutePath) => {
+            route(flagChar,  routePath.layout , () => {
+              route('', routePath.route, { index: true })
+              route('*', routePath.data)
+            })
+          }
+
           route('/', 'page/route.tsx', { index: true })
-          route('d', 'default/layout.tsx', () => {
-            route('', 'default/route.tsx', { index: true })
-            route('*', 'default/data.tsx')
-          })
-          route('e', 'escape/layout.tsx', () => {
-            route('', 'escape/route.tsx', { index: true })
-            route('*', 'escape/data.tsx')
-          })
+          addRoute('d', getRoutePath('default'))
+          addRoute('e', getRoutePath('escape'))
+          addRoute('p', getRoutePath('plain'))
           route('*', 'page/error.tsx')
         })
       },
