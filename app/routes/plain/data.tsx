@@ -2,7 +2,7 @@ import Data from '~/components/data.global'
 import { availableFlags } from '~/utils/flag'
 
 export default function DataPage() {
-  const flag = availableFlags.escape!
+  const flag = availableFlags.plain!
 
   return <Data
     flag={flag}

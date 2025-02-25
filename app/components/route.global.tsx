@@ -34,7 +34,7 @@ export default function Index() {
   }, [data, copy])
 
   useEffect(() => {
-    if (window && window.location) {
+    if (typeof window !== 'undefined' && window.location) {
       setLocation(window.location)
     }
   }, [setLocation])

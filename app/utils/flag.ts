@@ -1,9 +1,9 @@
 import { type FlagData, type Flags } from 'types/flag'
 
 export const availableFlags: Flags = {
-  default: {
-    name: 'default',
-    shortName: 'd',
+  plain: {
+    name: 'plain',
+    shortName: 'p',
     expressions: 'abc',
     transform(value) {
       return value
@@ -30,11 +30,11 @@ export const availableFlags: Flags = {
   
       return decode
     },
-  }
+  },
 }
 
 export function getDefaultFlag() {
-  const flag = Object.values(availableFlags).filter(data => data.name === 'default')
+  const flag = Object.values(availableFlags).filter(data => data.name === 'plain')
   return flag.pop() ?? null
 }
 

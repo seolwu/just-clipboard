@@ -10,22 +10,21 @@ import {
 } from '@remix-run/react'
 import type { LinksFunction, LoaderFunction } from '@remix-run/node'
 import { PreventFlashOnWrongTheme, ThemeProvider, useTheme } from 'remix-themes'
+import { PropsWithChildren } from 'react'
 import { themeSessionResolver } from './utils/session'
 import { type ThemeLoader } from 'types/theme'
-import { PropsWithChildren } from 'react'
 
-export const links: LinksFunction = () => [
-  { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
-  {
-    rel: 'preconnect',
-    href: 'https://fonts.gstatic.com',
-    crossOrigin: 'anonymous',
-  },
-  {
-    rel: 'stylesheet',
-    href: 'https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap',
-  }
-]
+export const links: LinksFunction = () => [{
+  rel: 'preconnect',
+  href: 'https://fonts.googleapis.com'
+}, {
+  rel: 'preconnect',
+  href: 'https://fonts.gstatic.com',
+  crossOrigin: 'anonymous',
+}, {
+  rel: 'stylesheet',
+  href: 'https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap',
+}]
 
 export const loader: LoaderFunction = async ({ request }): Promise<ThemeLoader> => {
   try {
@@ -72,3 +71,5 @@ export function App({ children }: PropsWithChildren) {
     </html>
   )
 }
+
+export function ErrorBoundary() {}

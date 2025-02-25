@@ -22,7 +22,7 @@ export default defineConfig({
       routes(defineRoutes) {
         return defineRoutes(route => {
           type RoutePath = { [key: string]: string }
-          
+
           const getRoutePath = (flag: string): RoutePath => {
             const routePath = `routes/${flag}`
             return {
@@ -40,9 +40,8 @@ export default defineConfig({
           }
 
           route('/', 'page/route.tsx', { index: true })
-          addRoute('d', getRoutePath('default'))
-          addRoute('e', getRoutePath('escape'))
           addRoute('p', getRoutePath('plain'))
+          addRoute('e', getRoutePath('escape'))
           route('*', 'page/error.tsx')
         })
       },

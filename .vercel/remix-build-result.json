@@ -10,11 +10,13 @@
       }
     },
     "routeIdToServerBundleId": {
+      "routes/escape": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/plain": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
       "page/route": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
-      "default/route": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
-      "default/data": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
-      "escape/route": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
-      "escape/data": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/plain/route": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/plain/data": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/escape/route": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/escape/data": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
       "page/error": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0"
     },
     "routes": {
@@ -23,6 +25,24 @@
         "id": "root",
         "file": "app/root.tsx",
         "config": {}
+      },
+      "routes/escape": {
+        "file": "app/routes/escape/route.tsx",
+        "id": "routes/escape",
+        "path": "escape",
+        "parentId": "root",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/plain": {
+        "file": "app/routes/plain/route.tsx",
+        "id": "routes/plain",
+        "path": "plain",
+        "parentId": "root",
+        "config": {
+          "runtime": "nodejs"
+        }
       },
       "page/route": {
         "path": "/",
@@ -34,52 +54,52 @@
           "runtime": "nodejs"
         }
       },
-      "default/layout": {
-        "path": "d",
-        "id": "default/layout",
+      "routes/plain/layout": {
+        "path": "p",
+        "id": "routes/plain/layout",
         "parentId": "root",
-        "file": "app/default/layout.tsx",
+        "file": "app/routes/plain/layout.tsx",
         "config": {}
       },
-      "default/route": {
+      "routes/plain/route": {
         "index": true,
-        "id": "default/route",
-        "parentId": "default/layout",
-        "file": "app/default/route.tsx",
+        "id": "routes/plain/route",
+        "parentId": "routes/plain/layout",
+        "file": "app/routes/plain/route.tsx",
         "config": {
           "runtime": "nodejs"
         }
       },
-      "default/data": {
+      "routes/plain/data": {
         "path": "*",
-        "id": "default/data",
-        "parentId": "default/layout",
-        "file": "app/default/data.tsx",
+        "id": "routes/plain/data",
+        "parentId": "routes/plain/layout",
+        "file": "app/routes/plain/data.tsx",
         "config": {
           "runtime": "nodejs"
         }
       },
-      "escape/layout": {
+      "routes/escape/layout": {
         "path": "e",
-        "id": "escape/layout",
+        "id": "routes/escape/layout",
         "parentId": "root",
-        "file": "app/escape/layout.tsx",
+        "file": "app/routes/escape/layout.tsx",
         "config": {}
       },
-      "escape/route": {
+      "routes/escape/route": {
         "index": true,
-        "id": "escape/route",
-        "parentId": "escape/layout",
-        "file": "app/escape/route.tsx",
+        "id": "routes/escape/route",
+        "parentId": "routes/escape/layout",
+        "file": "app/routes/escape/route.tsx",
         "config": {
           "runtime": "nodejs"
         }
       },
-      "escape/data": {
+      "routes/escape/data": {
         "path": "*",
-        "id": "escape/data",
-        "parentId": "escape/layout",
-        "file": "app/escape/data.tsx",
+        "id": "routes/escape/data",
+        "parentId": "routes/escape/layout",
+        "file": "app/routes/escape/data.tsx",
         "config": {
           "runtime": "nodejs"
         }
@@ -116,6 +136,18 @@
         "id": "root",
         "file": "root.tsx"
       },
+      "routes/escape": {
+        "file": "routes/escape/route.tsx",
+        "id": "routes/escape",
+        "path": "escape",
+        "parentId": "root"
+      },
+      "routes/plain": {
+        "file": "routes/plain/route.tsx",
+        "id": "routes/plain",
+        "path": "plain",
+        "parentId": "root"
+      },
       "page/route": {
         "path": "/",
         "index": true,
@@ -123,41 +155,41 @@
         "parentId": "root",
         "file": "page/route.tsx"
       },
-      "default/layout": {
-        "path": "d",
-        "id": "default/layout",
+      "routes/plain/layout": {
+        "path": "p",
+        "id": "routes/plain/layout",
         "parentId": "root",
-        "file": "default/layout.tsx"
+        "file": "routes/plain/layout.tsx"
       },
-      "default/route": {
+      "routes/plain/route": {
         "index": true,
-        "id": "default/route",
-        "parentId": "default/layout",
-        "file": "default/route.tsx"
+        "id": "routes/plain/route",
+        "parentId": "routes/plain/layout",
+        "file": "routes/plain/route.tsx"
       },
-      "default/data": {
+      "routes/plain/data": {
         "path": "*",
-        "id": "default/data",
-        "parentId": "default/layout",
-        "file": "default/data.tsx"
+        "id": "routes/plain/data",
+        "parentId": "routes/plain/layout",
+        "file": "routes/plain/data.tsx"
       },
-      "escape/layout": {
+      "routes/escape/layout": {
         "path": "e",
-        "id": "escape/layout",
+        "id": "routes/escape/layout",
         "parentId": "root",
-        "file": "escape/layout.tsx"
+        "file": "routes/escape/layout.tsx"
       },
-      "escape/route": {
+      "routes/escape/route": {
         "index": true,
-        "id": "escape/route",
-        "parentId": "escape/layout",
-        "file": "escape/route.tsx"
+        "id": "routes/escape/route",
+        "parentId": "routes/escape/layout",
+        "file": "routes/escape/route.tsx"
       },
-      "escape/data": {
+      "routes/escape/data": {
         "path": "*",
-        "id": "escape/data",
-        "parentId": "escape/layout",
-        "file": "escape/data.tsx"
+        "id": "routes/escape/data",
+        "parentId": "routes/escape/layout",
+        "file": "routes/escape/data.tsx"
       },
       "page/error": {
         "path": "*",

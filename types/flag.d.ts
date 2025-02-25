@@ -1,5 +1,5 @@
 export type FlagData = {
-  name: 'default' | 'escape' | string
+  name: 'plain' | 'escape' | string
   shortName: string
   expressions: string
   transform: (value: string) => string
